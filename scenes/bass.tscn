@@ -1,0 +1,323 @@
+[gd_scene load_steps=29 format=3 uid="uid://c8l7me2joq3tf"]
+
+[ext_resource type="Script" path="res://scenes/bass.gd" id="1_gh41t"]
+[ext_resource type="Texture2D" uid="uid://q11hkl7lowq7" path="res://images/bass/bass-roombg.png" id="1_w0ba5"]
+[ext_resource type="Texture2D" uid="uid://h67fohdawr7u" path="res://images/bass/bass-bookcase.png" id="2_wdh54"]
+[ext_resource type="Texture2D" uid="uid://sa65dtieus4y" path="res://images/bass/bass-small-closet.png" id="3_vsxd8"]
+[ext_resource type="Texture2D" uid="uid://cwx2u8dwi4nu3" path="res://images/bass/bass-recordplayer.png" id="4_01y2k"]
+[ext_resource type="Script" path="res://interactions/interactionarea/helping-sid/bass_bed_shape_area.gd" id="4_7ch7e"]
+[ext_resource type="Texture2D" uid="uid://cit46qqgg7ev7" path="res://images/bass/bass-bed.png" id="5_65b3a"]
+[ext_resource type="Script" path="res://interactions/interactionarea/helping-sid/bass_guitar.gd" id="5_pgpmo"]
+[ext_resource type="Script" path="res://interactions/interactionarea/helping-sid/bass_recordstorage_area.gd" id="6_ebc6j"]
+[ext_resource type="Texture2D" uid="uid://bobmrdmmlj7xk" path="res://images/bass/bass-boxes.png" id="6_mmimb"]
+[ext_resource type="Texture2D" uid="uid://d4m2rkvqor7vh" path="res://images/bass/bass-guitar.png" id="7_s4g5b"]
+[ext_resource type="Script" path="res://interactions/interactionarea/helping-sid/sid_area.gd" id="8_2flaq"]
+[ext_resource type="Texture2D" uid="uid://bbqnjr0q1xl6l" path="res://images/bass/bass-closet.png" id="8_14om8"]
+[ext_resource type="Texture2D" uid="uid://gv32unarpqgo" path="res://images/bass/bass-photoframe.png" id="9_iqu0u"]
+[ext_resource type="Theme" uid="uid://b2op61nl70bii" path="res://resources/default_theme.tres" id="10_71fgp"]
+[ext_resource type="PackedScene" uid="uid://bhjlubogk8c6t" path="res://scenes/atram2.tscn" id="10_xi8rd"]
+[ext_resource type="Script" path="res://interactions/interactionarea/helping-sid/bass_recordplayer_area.gd" id="11_capuw"]
+[ext_resource type="PackedScene" uid="uid://dq6vwgdae8235" path="res://camera_2d.tscn" id="11_gpaov"]
+[ext_resource type="PackedScene" uid="uid://dlfpg5qlr267c" path="res://scenes/sceneTransitionAnimation.tscn" id="12_igaow"]
+[ext_resource type="Texture2D" uid="uid://docvrqhyme8kl" path="res://images/sid_sprite.png" id="14_hybye"]
+[ext_resource type="Script" path="res://interactions/interactionarea/helping-sid/bass_closet_area.gd" id="15_b0d47"]
+[ext_resource type="AudioStream" uid="uid://kxe138j7pjpd" path="res://sound/music/басист фанки2.mp3" id="22_rkmog"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yr34e"]
+radius = 7.4668
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kgm4v"]
+radius = 9.94847
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ykylh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xt63b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_apsnl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u5qdl"]
+
+[node name="Bass" type="Node2D"]
+process_mode = 1
+y_sort_enabled = true
+script = ExtResource("1_gh41t")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+z_index = -4
+position = Vector2(-132, -276)
+color = Color(0.115199, 0.183108, 0.191021, 1)
+polygon = PackedVector2Array(-1519, -474, -1528, 2529, 3706, 2531, 3723, -480)
+
+[node name="bass-BGALL" type="CanvasGroup" parent="."]
+y_sort_enabled = true
+position = Vector2(851, 679)
+scale = Vector2(0.65, 0.65)
+
+[node name="bass-room-shape" type="StaticBody2D" parent="bass-BGALL"]
+z_index = -1
+y_sort_enabled = true
+
+[node name="bass-roombg" type="Sprite2D" parent="bass-BGALL/bass-room-shape"]
+texture = ExtResource("1_w0ba5")
+
+[node name="bass-roombg-col" type="CollisionPolygon2D" parent="bass-BGALL/bass-room-shape"]
+z_index = 1
+polygon = PackedVector2Array(41, 645, 791, 273, -35, -171, -790, 229, 42, 644, 48, 719, -900, 253, -885, 164, -24, -246, 939, 279, 48, 709)
+
+[node name="bass-bed-shape" type="StaticBody2D" parent="bass-BGALL"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-170, -88)
+
+[node name="bass-bed-col" type="CollisionPolygon2D" parent="bass-BGALL/bass-bed-shape"]
+z_index = 1
+polygon = PackedVector2Array(-352, 137, -108, 267, 303, 47, 59, -67)
+
+[node name="bass-bed-col2" type="Polygon2D" parent="bass-BGALL/bass-bed-shape"]
+color = Color(0.0838823, 0.0208759, 0.0209031, 0.462745)
+polygon = PackedVector2Array(-352, 137, -108, 267, 303, 47, 59, -67)
+
+[node name="bass-bed" type="Sprite2D" parent="bass-BGALL/bass-bed-shape"]
+y_sort_enabled = true
+texture = ExtResource("5_65b3a")
+
+[node name="bass-bed-shape-area" type="Area2D" parent="bass-BGALL/bass-bed-shape"]
+script = ExtResource("4_7ch7e")
+
+[node name="bass-bed-shape-col" type="CollisionShape2D" parent="bass-BGALL/bass-bed-shape/bass-bed-shape-area"]
+position = Vector2(43.8461, 201.846)
+rotation = -0.471995
+scale = Vector2(19.0401, -5.21946)
+shape = SubResource("CircleShape2D_yr34e")
+
+[node name="bass-recordstorage-area-label3" type="Label" parent="bass-BGALL/bass-bed-shape/bass-bed-shape-area"]
+z_index = 1023
+offset_left = -160.769
+offset_top = 1.84616
+offset_right = 81.2308
+offset_bottom = 30.8462
+scale = Vector2(1.34089, 1.34089)
+theme = ExtResource("10_71fgp")
+text = "Кровать"
+
+[node name="bass-guitar" type="Sprite2D" parent="bass-BGALL"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-63, -20)
+texture = ExtResource("7_s4g5b")
+offset = Vector2(0, -87.9)
+
+[node name="bass-guitar" type="Area2D" parent="bass-BGALL/bass-guitar"]
+position = Vector2(-107, 15.9999)
+script = ExtResource("5_pgpmo")
+
+[node name="bass-guitar-area-col" type="CollisionShape2D" parent="bass-BGALL/bass-guitar/bass-guitar"]
+position = Vector2(280.769, 112.615)
+rotation = -0.677339
+scale = Vector2(4.28757, 5.90341)
+shape = SubResource("CircleShape2D_kgm4v")
+
+[node name="Polygon2D" type="Polygon2D" parent="bass-BGALL/bass-guitar/bass-guitar/bass-guitar-area-col"]
+z_index = -1
+color = Color(0.137255, 0.0588235, 0.0352941, 0.505882)
+polygon = PackedVector2Array(19.6696, -9.44589, 13.3719, -19.1443, 23.006, -17.8645, 25.2309, -13.2205)
+
+[node name="bass-recordstorage-area-label2" type="Label" parent="bass-BGALL/bass-guitar/bass-guitar"]
+z_index = 1023
+offset_left = 188.462
+offset_top = -152.0
+offset_right = 430.462
+offset_bottom = -123.0
+scale = Vector2(1.34089, 1.34089)
+theme = ExtResource("10_71fgp")
+text = "Гитара и чехол"
+
+[node name="bass-bookcase-shape" type="StaticBody2D" parent="bass-BGALL"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(300, -126)
+
+[node name="bass-bookcase" type="Sprite2D" parent="bass-BGALL/bass-bookcase-shape"]
+y_sort_enabled = true
+position = Vector2(0, 158.308)
+texture = ExtResource("2_wdh54")
+offset = Vector2(0, -159.6)
+
+[node name="bass-bookcase-col" type="CollisionPolygon2D" parent="bass-BGALL/bass-bookcase-shape"]
+z_index = 1
+polygon = PackedVector2Array(-139, 141, 50, 233, 135, 182, -51, 95)
+
+[node name="bass-recordstorage-area" type="Area2D" parent="bass-BGALL/bass-bookcase-shape"]
+position = Vector2(-41.5385, 90.6154)
+script = ExtResource("6_ebc6j")
+
+[node name="recordstorage-area-col" type="CollisionShape2D" parent="bass-BGALL/bass-bookcase-shape/bass-recordstorage-area"]
+position = Vector2(29.2308, 89.2308)
+rotation = 0.619037
+scale = Vector2(7.60836, 12.9575)
+shape = SubResource("CircleShape2D_ykylh")
+
+[node name="bass-recordstorage-area-label" type="Label" parent="bass-BGALL/bass-bookcase-shape/bass-recordstorage-area"]
+z_index = 1023
+offset_left = -81.5384
+offset_top = -275.385
+offset_right = 160.462
+offset_bottom = -246.385
+scale = Vector2(1.34089, 1.34089)
+theme = ExtResource("10_71fgp")
+text = "Шкаф с пластинками"
+
+[node name="bass-smallcloset-area" type="StaticBody2D" parent="bass-BGALL"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(577, 168)
+
+[node name="bass-recordplayer" type="Sprite2D" parent="bass-BGALL/bass-smallcloset-area"]
+y_sort_enabled = true
+position = Vector2(-84.6924, 30.4615)
+texture = ExtResource("4_01y2k")
+offset = Vector2(0, -138.185)
+
+[node name="bass-smallcloset" type="Sprite2D" parent="bass-BGALL/bass-smallcloset-area"]
+y_sort_enabled = true
+position = Vector2(0, 21.2308)
+texture = ExtResource("3_vsxd8")
+offset = Vector2(0, -18.392)
+
+[node name="bass-photoframe" type="Sprite2D" parent="bass-BGALL/bass-smallcloset-area"]
+y_sort_enabled = true
+position = Vector2(103, 35.0769)
+texture = ExtResource("9_iqu0u")
+offset = Vector2(0, -112.28)
+
+[node name="bass-cmallcloset-col" type="CollisionPolygon2D" parent="bass-BGALL/bass-smallcloset-area"]
+z_index = 1
+polygon = PackedVector2Array(-203, 21, 93, 166, 213, 106, -90, -47)
+
+[node name="bass-cmallcloset-col2" type="Polygon2D" parent="bass-BGALL/bass-smallcloset-area"]
+color = Color(0.137255, 0.0588235, 0.0352941, 0.576471)
+polygon = PackedVector2Array(-203, 21, 93, 166, 213, 106, -90, -47)
+
+[node name="bass-recordplayer-area" type="Area2D" parent="bass-BGALL/bass-smallcloset-area"]
+script = ExtResource("11_capuw")
+
+[node name="bass-recordplayer-area-col" type="CollisionShape2D" parent="bass-BGALL/bass-smallcloset-area/bass-recordplayer-area"]
+position = Vector2(-70.8462, 110.462)
+rotation = 0.387347
+scale = Vector2(13.0566, 6.35155)
+shape = SubResource("CircleShape2D_xt63b")
+
+[node name="bass-recordplayer-area-label" type="Label" parent="bass-BGALL/bass-smallcloset-area/bass-recordplayer-area"]
+z_index = 1023
+offset_left = -73.9232
+offset_top = -218.769
+offset_right = 98.0768
+offset_bottom = -189.769
+scale = Vector2(1.22175, 1.22175)
+theme = ExtResource("10_71fgp")
+text = "Проигрыватель"
+
+[node name="sid" type="Sprite2D" parent="bass-BGALL"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-315.385, 400)
+scale = Vector2(0.509, 0.509)
+texture = ExtResource("14_hybye")
+offset = Vector2(0, -311.285)
+flip_h = true
+
+[node name="sid-area" type="Area2D" parent="bass-BGALL/sid"]
+position = Vector2(22.4365, -86.5374)
+scale = Vector2(3.20513, 3.20513)
+script = ExtResource("8_2flaq")
+
+[node name="sid-area-col" type="CollisionShape2D" parent="bass-BGALL/sid/sid-area"]
+position = Vector2(14, 15)
+scale = Vector2(9.93164, 6.81038)
+shape = SubResource("CircleShape2D_apsnl")
+
+[node name="sid-area-label" type="Label" parent="bass-BGALL/sid/sid-area"]
+z_index = 1023
+offset_left = 33.0
+offset_top = -56.0
+offset_right = 205.0
+offset_bottom = -27.0
+scale = Vector2(0.819729, 0.819729)
+theme = ExtResource("10_71fgp")
+text = "Спросить Сида"
+
+[node name="bass-closet-wrap" type="StaticBody2D" parent="bass-BGALL"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-598, -4)
+
+[node name="bass-closet" type="Sprite2D" parent="bass-BGALL/bass-closet-wrap"]
+y_sort_enabled = true
+position = Vector2(0, 165.538)
+texture = ExtResource("8_14om8")
+offset = Vector2(0, -165.3)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="bass-BGALL/bass-closet-wrap"]
+z_index = 1
+polygon = PackedVector2Array(-67, 279, 177, 157, 71, 99, -174, 219)
+
+[node name="bass-closet-area" type="Area2D" parent="bass-BGALL/bass-closet-wrap"]
+script = ExtResource("15_b0d47")
+
+[node name="bass-closet-area-col" type="CollisionShape2D" parent="bass-BGALL/bass-closet-wrap/bass-closet-area"]
+position = Vector2(67.2307, 219.385)
+rotation = -0.54068
+scale = Vector2(15.165, 7.29329)
+shape = SubResource("CircleShape2D_u5qdl")
+
+[node name="bass-closet-area-label" type="Label" parent="bass-BGALL/bass-closet-wrap/bass-closet-area"]
+z_index = 1023
+offset_left = -52.7692
+offset_top = -89.8462
+offset_right = 119.231
+offset_bottom = -60.8462
+scale = Vector2(1.17482, 1.17482)
+theme = ExtResource("10_71fgp")
+text = "Шкаф"
+horizontal_alignment = 1
+
+[node name="bass-boxes" type="Sprite2D" parent="bass-BGALL"]
+z_index = 2
+position = Vector2(-599, -235)
+texture = ExtResource("6_mmimb")
+
+[node name="bass-boxes2" type="Sprite2D" parent="bass-BGALL"]
+z_index = 2
+position = Vector2(294, -316)
+scale = Vector2(-0.63, 0.63)
+texture = ExtResource("6_mmimb")
+
+[node name="atramm2" parent="." instance=ExtResource("10_xi8rd")]
+position = Vector2(742, 948)
+scale = Vector2(0.55, 0.55)
+slide_on_ceiling = false
+
+[node name="Camera2D" parent="atramm2" instance=ExtResource("11_gpaov")]
+position = Vector2(47.4074, -320)
+zoom = Vector2(0.86, 0.86)
+
+[node name="SceneTransitionAnimation" parent="." instance=ExtResource("12_igaow")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_rkmog")
+autoplay = true
+bus = &"MUSIC"
+parameters/looping = true
+
+[connection signal="body_entered" from="bass-BGALL/bass-bed-shape/bass-bed-shape-area" to="bass-BGALL/bass-bed-shape/bass-bed-shape-area" method="_on_body_entered"]
+[connection signal="body_exited" from="bass-BGALL/bass-bed-shape/bass-bed-shape-area" to="bass-BGALL/bass-bed-shape/bass-bed-shape-area" method="_on_body_exited"]
+[connection signal="body_entered" from="bass-BGALL/bass-guitar/bass-guitar" to="bass-BGALL/bass-guitar/bass-guitar" method="_on_body_entered"]
+[connection signal="body_exited" from="bass-BGALL/bass-guitar/bass-guitar" to="bass-BGALL/bass-guitar/bass-guitar" method="_on_body_exited"]
+[connection signal="body_entered" from="bass-BGALL/bass-bookcase-shape/bass-recordstorage-area" to="bass-BGALL/bass-bookcase-shape/bass-recordstorage-area" method="_on_body_entered"]
+[connection signal="body_exited" from="bass-BGALL/bass-bookcase-shape/bass-recordstorage-area" to="bass-BGALL/bass-bookcase-shape/bass-recordstorage-area" method="_on_body_exited"]
+[connection signal="body_entered" from="bass-BGALL/bass-smallcloset-area/bass-recordplayer-area" to="bass-BGALL/bass-smallcloset-area/bass-recordplayer-area" method="_on_body_entered"]
+[connection signal="body_exited" from="bass-BGALL/bass-smallcloset-area/bass-recordplayer-area" to="bass-BGALL/bass-smallcloset-area/bass-recordplayer-area" method="_on_body_exited"]
+[connection signal="body_entered" from="bass-BGALL/sid/sid-area" to="bass-BGALL/sid/sid-area" method="_on_body_entered"]
+[connection signal="body_exited" from="bass-BGALL/sid/sid-area" to="bass-BGALL/sid/sid-area" method="_on_body_exited"]
+[connection signal="body_entered" from="bass-BGALL/bass-closet-wrap/bass-closet-area" to="bass-BGALL/bass-closet-wrap/bass-closet-area" method="_on_body_entered"]
+[connection signal="body_exited" from="bass-BGALL/bass-closet-wrap/bass-closet-area" to="bass-BGALL/bass-closet-wrap/bass-closet-area" method="_on_body_exited"]

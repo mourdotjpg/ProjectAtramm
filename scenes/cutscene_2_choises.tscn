@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7p3fcchkw6w0"]
+
+[ext_resource type="Script" path="res://scenes/scene_2_choises.gd" id="1_8qbnr"]
+[ext_resource type="PackedScene" uid="uid://dlfpg5qlr267c" path="res://scenes/sceneTransitionAnimation.tscn" id="2_67qgx"]
+
+[node name="scene2-choises" type="Node2D"]
+script = ExtResource("1_8qbnr")
+
+[node name="AnimationPlayer" parent="." instance=ExtResource("2_67qgx")]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(1280, 720)
+offset_right = 1280.0
+offset_bottom = 720.0
+scale = Vector2(1.53985, 1.55883)
+color = Color(0.00566115, 0.00566115, 0.00566115, 1)

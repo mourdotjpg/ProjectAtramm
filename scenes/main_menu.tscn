@@ -1,0 +1,126 @@
+[gd_scene load_steps=3 format=3 uid="uid://dudcraollw8k6"]
+
+[ext_resource type="Script" path="res://scenes/mainmenu-control.gd" id="1_a6qrj"]
+[ext_resource type="Script" path="res://scenes/testbuild-menu.gd" id="2_bdivr"]
+
+[node name="mainMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+
+[node name="background" type="ColorRect" parent="."]
+layout_mode = 1
+offset_left = -36.0
+offset_top = -20.0
+offset_right = 1315.0
+offset_bottom = 740.0
+color = Color(0, 0, 0, 1)
+
+[node name="mainmenu-control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a6qrj")
+
+[node name="menu-main" type="VBoxContainer" parent="mainmenu-control"]
+layout_mode = 0
+offset_left = 529.0
+offset_top = 291.0
+offset_right = 659.0
+offset_bottom = 427.0
+
+[node name="button-newgame" type="Button" parent="mainmenu-control/menu-main"]
+layout_mode = 2
+text = "Начать игру"
+
+[node name="button-options" type="Button" parent="mainmenu-control/menu-main"]
+visible = false
+layout_mode = 2
+text = "Настройки"
+
+[node name="button-credits" type="Button" parent="mainmenu-control/menu-main"]
+layout_mode = 2
+text = "Авторы"
+
+[node name="button-quit" type="Button" parent="mainmenu-control/menu-main"]
+layout_mode = 2
+text = "Выйти из игры"
+
+[node name="testbuild-menu" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_bdivr")
+
+[node name="menu-preload" type="VBoxContainer" parent="testbuild-menu"]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 911.0
+offset_top = 262.0
+offset_right = 1027.0
+offset_bottom = 425.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="label-preload" type="Label" parent="testbuild-menu/menu-preload"]
+layout_mode = 2
+text = "[for testing]
+Load scene"
+horizontal_alignment = 1
+
+[node name="button-cutscene" type="Button" parent="testbuild-menu/menu-preload"]
+layout_mode = 2
+text = "cutscene"
+
+[node name="button-cutscene2" type="Button" parent="testbuild-menu/menu-preload"]
+layout_mode = 2
+text = "cutscene2"
+
+[node name="button-basement" type="Button" parent="testbuild-menu/menu-preload"]
+layout_mode = 2
+text = "basement"
+
+[node name="button-hall" type="Button" parent="testbuild-menu/menu-preload"]
+layout_mode = 2
+text = "hall"
+
+[node name="button-bass" type="Button" parent="testbuild-menu/menu-preload"]
+layout_mode = 2
+text = "bass"
+
+[node name="label-testbuild" type="Label" parent="."]
+layout_mode = 0
+offset_left = 496.0
+offset_top = 101.0
+offset_right = 693.0
+offset_bottom = 124.0
+text = "Project ATRAMM testbuild 08"
+
+[node name="Label-dedicatedtojam" type="Label" parent="."]
+layout_mode = 0
+offset_left = 442.0
+offset_top = 658.0
+offset_right = 758.0
+offset_bottom = 681.0
+text = "Сделано для Summer 2024 Memsek Jam"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="mainmenu-control/menu-main/button-newgame" to="mainmenu-control" method="_on_buttonnewgame_pressed"]
+[connection signal="pressed" from="mainmenu-control/menu-main/button-options" to="mainmenu-control" method="_on_buttonoptions_pressed"]
+[connection signal="pressed" from="mainmenu-control/menu-main/button-credits" to="mainmenu-control" method="_on_buttoncredits_pressed"]
+[connection signal="pressed" from="mainmenu-control/menu-main/button-quit" to="mainmenu-control" method="_on_buttonquit_pressed"]
+[connection signal="pressed" from="testbuild-menu/menu-preload/button-cutscene" to="testbuild-menu" method="_on_buttoncutscene_pressed"]
+[connection signal="pressed" from="testbuild-menu/menu-preload/button-cutscene2" to="testbuild-menu" method="_on_buttoncutscene_2_pressed"]
+[connection signal="pressed" from="testbuild-menu/menu-preload/button-basement" to="testbuild-menu" method="_on_buttonbasement_pressed"]
+[connection signal="pressed" from="testbuild-menu/menu-preload/button-hall" to="testbuild-menu" method="_on_buttonhall_pressed"]
+[connection signal="pressed" from="testbuild-menu/menu-preload/button-bass" to="testbuild-menu" method="_on_buttonbass_pressed"]

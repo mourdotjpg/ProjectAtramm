@@ -1,0 +1,5 @@
+Пройти в подвал?
+- Да
+	[signal arg="move_to_basement"]
+- Нет
+[end_timeline]

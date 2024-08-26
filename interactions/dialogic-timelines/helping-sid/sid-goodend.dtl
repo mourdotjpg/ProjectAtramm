@@ -1,0 +1,5 @@
+[signal arg="go_to_black"]
+[background arg="res://images/sid-goodend.png" fade="1.0"]
+[wait_input]
+ХОРОШАЯ КОНЦОВКА (Сид)
+[signal arg="end"]

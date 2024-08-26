@@ -1,0 +1,834 @@
+[gd_scene load_steps=81 format=3 uid="uid://bbbb6nwq4jljt"]
+
+[ext_resource type="Script" path="res://scenes/basement.gd" id="1_0ucyg"]
+[ext_resource type="PackedScene" uid="uid://bhjlubogk8c6t" path="res://scenes/atram2.tscn" id="3_w21ft"]
+[ext_resource type="PackedScene" uid="uid://csttchuqko8nr" path="res://scenes/eye_blinking.tscn" id="4_5vil5"]
+[ext_resource type="PackedScene" uid="uid://dq6vwgdae8235" path="res://camera_2d.tscn" id="4_ibx7l"]
+[ext_resource type="Texture2D" uid="uid://cdu6wdksxifhs" path="res://images/basement_room.png" id="5_x181j"]
+[ext_resource type="Texture2D" uid="uid://qcgj551wq7i6" path="res://images/basement_door.png" id="6_pgfeq"]
+[ext_resource type="Texture2D" uid="uid://ti07h41wlds8" path="res://images/basement/clutter/penta-smudged.png" id="7_5wxxx"]
+[ext_resource type="PackedScene" uid="uid://uxfkc6hmw4l" path="res://interactions/interactionarea/interaction_area.tscn" id="7_drie3"]
+[ext_resource type="Texture2D" uid="uid://fcydxmssu7ft" path="res://images/basement/clutter/stairs.png" id="8_u2m7e"]
+[ext_resource type="Texture2D" uid="uid://c71a1d1pxhcj6" path="res://images/basement/clutter/border2.png" id="9_8pkqm"]
+[ext_resource type="Texture2D" uid="uid://b68jjyh1csb6s" path="res://images/basement_glyph.png" id="9_jnqml"]
+[ext_resource type="Theme" uid="uid://b2op61nl70bii" path="res://resources/default_theme.tres" id="10_1ax8c"]
+[ext_resource type="PackedScene" uid="uid://bq3h3qv0v8o85" path="res://scenes/interact_label.tscn" id="10_wr74h"]
+[ext_resource type="Texture2D" uid="uid://d4nvb0c08ka6" path="res://images/basement/clutter/railings-over.png" id="11_4kgnv"]
+[ext_resource type="Texture2D" uid="uid://ct71oe004xilk" path="res://images/basement_portal.png" id="11_358hw"]
+[ext_resource type="PackedScene" uid="uid://dlfpg5qlr267c" path="res://scenes/sceneTransitionAnimation.tscn" id="13_2ylkv"]
+[ext_resource type="Texture2D" uid="uid://dfi0p30jgetgd" path="res://images/basement/clutter/border.png" id="14_8gl0r"]
+[ext_resource type="Texture2D" uid="uid://bdq2xjaxa4vbb" path="res://images/basement/clutter/aircan.png" id="15_ukrkg"]
+[ext_resource type="Texture2D" uid="uid://dm0sbiursxemv" path="res://images/basement/clutter/book3.png" id="16_wmchv"]
+[ext_resource type="Texture2D" uid="uid://d4lecrxcvp1xh" path="res://images/basement/clutter/candle7.png" id="17_wblnj"]
+[ext_resource type="Texture2D" uid="uid://f0tnyotjsw8s" path="res://images/basement/clutter/book-4.png" id="17_xv148"]
+[ext_resource type="Texture2D" uid="uid://bivhm1pjk0tse" path="res://images/basement/clutter/candle8.png" id="18_7mvsi"]
+[ext_resource type="Texture2D" uid="uid://dv3310mjic4ar" path="res://images/basement/clutter/box-without-book.png" id="18_21qy1"]
+[ext_resource type="Texture2D" uid="uid://cx3smx1m70y0w" path="res://images/basement/clutter/box-with-book.png" id="19_uym0h"]
+[ext_resource type="Script" path="res://interactions/interactionarea/book_pile_area.gd" id="20_0k44v"]
+[ext_resource type="Texture2D" uid="uid://b6isxj6f5po7j" path="res://images/basement/clutter/candle1.png" id="20_qaahk"]
+[ext_resource type="Texture2D" uid="uid://perfirf7e0xj" path="res://images/basement/clutter/bucket1.png" id="21_y4iub"]
+[ext_resource type="Texture2D" uid="uid://cdq7wdiodkhq3" path="res://images/basement/clutter/candle2.png" id="22_n2ft3"]
+[ext_resource type="Texture2D" uid="uid://b4bk2h084s5ex" path="res://images/basement/clutter/candle3.png" id="23_7bme4"]
+[ext_resource type="Texture2D" uid="uid://2tuhak0mfwq" path="res://images/basement/clutter/paint1.png" id="23_ukgrb"]
+[ext_resource type="Script" path="res://interactions/interactionarea/box-with-no-book.gd" id="24_3o7ue"]
+[ext_resource type="Texture2D" uid="uid://bf2a6qccfihmm" path="res://images/basement/clutter/candle9.png" id="24_a8orl"]
+[ext_resource type="Texture2D" uid="uid://cqdofletnf75d" path="res://images/basement/clutter/candle4.png" id="24_say53"]
+[ext_resource type="AudioStream" uid="uid://dcc4pe6osxnjx" path="res://sound/music/basement.mp3" id="26_cjlej"]
+[ext_resource type="Texture2D" uid="uid://dbfk0kl4amd54" path="res://images/basement/clutter/candle5.png" id="28_vr377"]
+[ext_resource type="Texture2D" uid="uid://citup8r4wvmty" path="res://images/basement/clutter/candle6.png" id="29_bhbpx"]
+[ext_resource type="Texture2D" uid="uid://byte3oavk1bya" path="res://images/basement/clutter/fairylights-base.png" id="30_wstph"]
+[ext_resource type="Texture2D" uid="uid://br1h0nes1s4vq" path="res://images/basement/clutter/energydrink.png" id="32_w2wbe"]
+[ext_resource type="Texture2D" uid="uid://fo1lhuyegbcu" path="res://images/basement/clutter/energydrink2.png" id="33_i5se7"]
+[ext_resource type="Texture2D" uid="uid://chcefrvdfun2w" path="res://images/basement/clutter/energydrink1.png" id="34_58iri"]
+[ext_resource type="Texture2D" uid="uid://00vl0mrhdsh2" path="res://images/basement/clutter/knife.png" id="35_so487"]
+[ext_resource type="Script" path="res://interactions/interactionarea/fairylights_area.gd" id="36_5qve6"]
+[ext_resource type="Texture2D" uid="uid://bon0l3awk1u7b" path="res://images/basement/clutter/pipes.png" id="36_ickol"]
+[ext_resource type="Texture2D" uid="uid://b6yklmqqrnlhe" path="res://images/basement/clutter/elecrical1.png" id="37_4vyps"]
+[ext_resource type="Texture2D" uid="uid://c3mxpece84iur" path="res://images/basement/clutter/saw-and-tools.png" id="38_clbqt"]
+[ext_resource type="Texture2D" uid="uid://cucw5icay0oih" path="res://images/basement/clutter/pizzabox.png" id="39_f1ye5"]
+[ext_resource type="Texture2D" uid="uid://6tp5d2eo2igy" path="res://images/basement/clutter/paperclutter.png" id="40_ydxi0"]
+[ext_resource type="Texture2D" uid="uid://du8v7wly8nrdi" path="res://images/basement/clutter/pickles.png" id="41_4grrg"]
+[ext_resource type="Texture2D" uid="uid://fj78b6xhaibf" path="res://images/basement/clutter/storage.png" id="42_m4ilq"]
+[ext_resource type="Texture2D" uid="uid://b75e2b15n0wnf" path="res://images/basement/clutter/switch.png" id="43_gtln7"]
+[ext_resource type="Script" path="res://interactions/interactionarea/tools_area.gd" id="44_dknlf"]
+[ext_resource type="Texture2D" uid="uid://80qsn0cci82" path="res://images/basement/clutter/wires-inside-storage.png" id="44_t2x8n"]
+[ext_resource type="Texture2D" uid="uid://k61wqb8ui5f2" path="res://images/basement/clutter/galolamp.png" id="45_8o2an"]
+[ext_resource type="Script" path="res://interactions/interactionarea/storage_area.gd" id="46_crtwe"]
+[ext_resource type="Texture2D" uid="uid://c2v86siw7mc8y" path="res://images/basement/clutter/wires2.png" id="46_exwc1"]
+[ext_resource type="PackedScene" uid="uid://gc41s2na7q28" path="res://images/basement/lights/cpu_particle_light.tscn" id="51_b4883"]
+[ext_resource type="Texture2D" uid="uid://c2lldskprxmnl" path="res://images/basement/lights/general light.png" id="52_2776i"]
+[ext_resource type="PackedScene" uid="uid://gwy3rd0d4gwd" path="res://images/basement/lights/candlelight/candlelight_anim.tscn" id="52_la1ap"]
+
+[sub_resource type="Gradient" id="Gradient_2qaix"]
+offsets = PackedFloat32Array(0, 0.69341)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4uq2d"]
+gradient = SubResource("Gradient_2qaix")
+fill = 1
+fill_from = Vector2(0.491453, 0.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_35god"]
+radius = 151.251
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mwnak"]
+radius = 17.366
+height = 80.9087
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pje6w"]
+radius = 20.0
+height = 72.7275
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rwhx7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h56a7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5tbmg"]
+radius = 18.8136
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ek6wt"]
+size = Vector2(20, 11.5836)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_db8ts"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_352su"]
+polygon = PackedVector2Array(276.83, -481.429, 368.675, -435.974, 371.262, -139.87, 367.381, -137.273, 364.794, -433.377, 112.543, -306.104, 111.25, -8.70154, 109.956, -303.507, 19.4042, -351.559)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_44cxy"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nrv8j"]
+radius = 51.5588
+height = 163.48
+
+[sub_resource type="Gradient" id="Gradient_upeva"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vjyl6"]
+gradient = SubResource("Gradient_upeva")
+fill = 1
+fill_from = Vector2(0.452991, 0.0128205)
+fill_to = Vector2(0.175214, 0.470085)
+
+[sub_resource type="Gradient" id="Gradient_23tst"]
+offsets = PackedFloat32Array(0, 0.713467)
+colors = PackedColorArray(0.928288, 0.928288, 0.928288, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ekrln"]
+gradient = SubResource("Gradient_23tst")
+fill = 1
+fill_from = Vector2(0.495726, 0.504274)
+fill_to = Vector2(0.824786, 0.128205)
+
+[sub_resource type="Gradient" id="Gradient_6o5j3"]
+offsets = PackedFloat32Array(0, 0.647564)
+colors = PackedColorArray(0.979943, 0.979943, 0.979943, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_itjni"]
+gradient = SubResource("Gradient_6o5j3")
+fill = 1
+fill_from = Vector2(0.504274, 0.495726)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_l7lwk"]
+polygon = PackedVector2Array(907.793, -881.429, -12.9871, -422.987, -10.3896, -433.377, 901.299, -886.623, 905.195, -963.247, 911.688, -956.753)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_y703k"]
+polygon = PackedVector2Array(942.858, -943.767, 1172.73, -825.585, 1154.55, -815.195, 1403.9, -691.819, 1429.87, -699.611, 1684.42, -568.442, 1688.31, -132.078, 651.948, 392.597, -92.2075, 32.8569, -288.311, 77.0127, 648.052, 473.117, 1689.61, -48.9613, 1735.07, -73.6366, 1751.95, -582.728, 916.884, -998.312, 870.13, -987.923)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_gp7yu"]
+polygon = PackedVector2Array(879.221, -433.377, 1068.83, -624.286, 1079.22, -620.39, 1072.73, -603.507, 1064.94, -598.312, 1064.94, -529.481, 1057.14, -524.286, 1046.75, -528.182, 1048.05, -581.429, 1014.29, -546.364, 1014.29, -476.234, 1006.49, -473.637, 997.403, -476.234, 996.104, -529.481, 972.728, -503.507, 972.728, -432.078, 963.637, -426.883, 954.546, -430.78, 955.845, -485.325, 922.078, -451.559, 922.078, -378.832, 912.987, -373.637, 903.897, -377.533, 903.897, -433.377, 884.416, -413.896, 874.026, -417.793)
+
+[node name="Basement" type="Node2D"]
+y_sort_enabled = true
+scale = Vector2(0.7, 0.7)
+script = ExtResource("1_0ucyg")
+
+[node name="atramm2" parent="." instance=ExtResource("3_w21ft")]
+position = Vector2(2225.71, 1997.14)
+scale = Vector2(0.6, 0.6)
+
+[node name="Camera2D" parent="atramm2" instance=ExtResource("4_ibx7l")]
+scale = Vector2(1.32408, 1.55292)
+zoom = Vector2(0.87, 0.87)
+
+[node name="character-light" type="PointLight2D" parent="atramm2"]
+position = Vector2(2.24496, -161.429)
+scale = Vector2(31.5798, 17.3408)
+color = Color(1, 0.788235, 1, 1)
+energy = 0.45
+range_item_cull_mask = 524289
+texture = SubResource("GradientTexture2D_4uq2d")
+
+[node name="background" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(2112, 1720)
+
+[node name="Polygon2D" type="Polygon2D" parent="background"]
+z_index = -3
+y_sort_enabled = true
+scale = Vector2(12.68, 12.68)
+color = Color(0.00842882, 0.00228622, 0.0714656, 1)
+polygon = PackedVector2Array(-191.368, -130.944, 210.388, -130.944, 210.388, 114.265, -198.83, 113.387)
+
+[node name="eyes" type="CanvasGroup" parent="background"]
+position = Vector2(-1150, -591)
+scale = Vector2(2.525, 2.525)
+
+[node name="eye_blinking" parent="background/eyes" instance=ExtResource("4_5vil5")]
+position = Vector2(0, 0)
+scale = Vector2(1, 1)
+autoplay = "default"
+
+[node name="eye_blinking2" parent="background/eyes" instance=ExtResource("4_5vil5")]
+position = Vector2(204.356, -15.8416)
+scale = Vector2(1, 1)
+autoplay = "default"
+frame = 2
+frame_progress = 0.0
+
+[node name="eye_blinking3" parent="background/eyes" instance=ExtResource("4_5vil5")]
+position = Vector2(-37.6238, 314.059)
+scale = Vector2(1, 1)
+autoplay = "default"
+frame = 4
+frame_progress = 0.0
+
+[node name="eye_blinking4" parent="background/eyes" instance=ExtResource("4_5vil5")]
+position = Vector2(502.574, 562.376)
+scale = Vector2(1, 1)
+autoplay = "default"
+frame = 6
+frame_progress = 0.0
+
+[node name="eye_blinking5" parent="background/eyes" instance=ExtResource("4_5vil5")]
+position = Vector2(834.455, 419.802)
+scale = Vector2(1, 1)
+autoplay = "default"
+frame = 6
+frame_progress = 0.0
+
+[node name="eye_blinking6" parent="background/eyes" instance=ExtResource("4_5vil5")]
+position = Vector2(942.178, 217.822)
+scale = Vector2(1, 1)
+autoplay = "default"
+frame = 4
+frame_progress = 0.0
+
+[node name="roomBG" type="StaticBody2D" parent="background"]
+
+[node name="basement_room" type="Sprite2D" parent="background/roomBG"]
+z_index = -1
+y_sort_enabled = true
+texture = ExtResource("5_x181j")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="background/roomBG"]
+visible = false
+polygon = PackedVector2Array(-35, -164, -986, 312, -141, 733, 989, 162, 353, -156, 348, -221, 1054, 138, 1053, 221, -145, 799, -1073, 342, -1048, 283, 2, -225)
+
+[node name="basement_door" type="Sprite2D" parent="background"]
+y_sort_enabled = true
+position = Vector2(261, -503)
+texture = ExtResource("6_pgfeq")
+
+[node name="stairs_group" type="StaticBody2D" parent="background"]
+position = Vector2(168, -225)
+
+[node name="basement_stairs" type="Sprite2D" parent="background/stairs_group"]
+y_sort_enabled = true
+position = Vector2(-2.9643, -48.5)
+scale = Vector2(0.965763, 0.989092)
+texture = ExtResource("8_u2m7e")
+
+[node name="stairs_col" type="CollisionPolygon2D" parent="background/stairs_group"]
+polygon = PackedVector2Array(-188.571, 59.2858, -10, 152.143, 192.857, 49.2858, 197, -63, -59, -92, -188.571, 27.8572)
+
+[node name="InteractionArea" parent="background/stairs_group" instance=ExtResource("7_drie3")]
+action_name = "Нажмите [E]"
+
+[node name="col_area2d" type="CollisionShape2D" parent="background/stairs_group/InteractionArea"]
+z_index = 1
+position = Vector2(-70, 45)
+scale = Vector2(0.772612, 0.772612)
+shape = SubResource("CircleShape2D_35god")
+
+[node name="Interact_label2" parent="background/stairs_group/InteractionArea" instance=ExtResource("10_wr74h")]
+offset_left = -20.0
+offset_top = 60.7143
+offset_right = 123.0
+offset_bottom = 89.7143
+theme = ExtResource("10_1ax8c")
+text = "Подняться"
+
+[node name="basement_petagram" type="Sprite2D" parent="background"]
+position = Vector2(122.286, 312.857)
+scale = Vector2(0.484746, 0.484746)
+texture = ExtResource("7_5wxxx")
+
+[node name="basement_glyph_wall" type="Sprite2D" parent="background"]
+position = Vector2(-397, -132)
+texture = ExtResource("9_jnqml")
+
+[node name="border_nextto_glyph" type="Sprite2D" parent="background"]
+position = Vector2(-399.143, -1.42859)
+scale = Vector2(0.506437, 0.506437)
+texture = ExtResource("9_8pkqm")
+
+[node name="basement_railing" type="Sprite2D" parent="background"]
+position = Vector2(246.857, -182.857)
+scale = Vector2(0.971939, 1)
+texture = ExtResource("11_4kgnv")
+offset = Vector2(0, -68.955)
+
+[node name="basement_portal" type="Sprite2D" parent="background"]
+y_sort_enabled = true
+position = Vector2(-448, -166)
+texture = ExtResource("11_358hw")
+
+[node name="border1" type="Sprite2D" parent="background"]
+y_sort_enabled = true
+position = Vector2(675.674, -5.84288)
+scale = Vector2(1.01246, 1.01246)
+texture = ExtResource("14_8gl0r")
+
+[node name="aircan2_wrap" type="StaticBody2D" parent="background"]
+position = Vector2(904.499, 169.897)
+scale = Vector2(1.1, 1.1)
+
+[node name="aircan2" type="Sprite2D" parent="background/aircan2_wrap"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-53.6362, -32.7272)
+texture = ExtResource("15_ukrkg")
+offset = Vector2(0, -135.725)
+
+[node name="aircan_col2" type="CollisionShape2D" parent="background/aircan2_wrap"]
+z_index = 2
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_mwnak")
+
+[node name="Polygon2D" type="Polygon2D" parent="background/aircan2_wrap"]
+color = Color(0, 0, 0.156863, 0.552941)
+polygon = PackedVector2Array(-0.713379, -251.854, 0.585449, -25.8804, 31.7542, 11.782, 77.2087, -6.39978, 81.105, -28.4778, 90.1958, -33.6726, 90.1958, -220.686)
+
+[node name="aircan1_wrap" type="StaticBody2D" parent="background"]
+position = Vector2(904.499, 169.897)
+scale = Vector2(1.1, 1.1)
+
+[node name="aircan_col1" type="CollisionShape2D" parent="background/aircan1_wrap"]
+z_index = 1
+position = Vector2(-60.4543, -35.3613)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_pje6w")
+
+[node name="aircan" type="Sprite2D" parent="background/aircan1_wrap"]
+z_index = 1
+y_sort_enabled = true
+texture = ExtResource("15_ukrkg")
+offset = Vector2(0, -135.725)
+
+[node name="Book-pile" type="Area2D" parent="background"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-527.715, 258.571)
+scale = Vector2(0.498897, 0.498897)
+
+[node name="book3" type="Sprite2D" parent="background/Book-pile"]
+texture = ExtResource("16_wmchv")
+
+[node name="book4" type="Sprite2D" parent="background/Book-pile"]
+position = Vector2(-214.758, 111.676)
+scale = Vector2(1.13957, 1.13957)
+texture = ExtResource("17_xv148")
+
+[node name="book-pile-area" type="Area2D" parent="background/Book-pile"]
+script = ExtResource("20_0k44v")
+
+[node name="book-pile-area-col" type="CollisionShape2D" parent="background/Book-pile/book-pile-area"]
+position = Vector2(-194.714, 71.5872)
+scale = Vector2(35.3624, 19.4754)
+shape = SubResource("CircleShape2D_rwhx7")
+
+[node name="book-pile-label" type="Label" parent="background/Book-pile/book-pile-area"]
+offset_left = -366.521
+offset_top = -148.899
+offset_right = -206.521
+offset_bottom = -87.8992
+scale = Vector2(2.23218, 2.23218)
+theme = ExtResource("10_1ax8c")
+text = "Куча книг
+и макулатуры"
+horizontal_alignment = 1
+
+[node name="candle7" type="Sprite2D" parent="background"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-552, 480)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("17_wblnj")
+offset = Vector2(0, -39.675)
+
+[node name="candle8" type="Sprite2D" parent="background"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-506, 504)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("18_7mvsi")
+offset = Vector2(0, -38.15)
+
+[node name="box-with-no-book" type="StaticBody2D" parent="background"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-422, 507)
+scale = Vector2(0.884148, 0.884148)
+
+[node name="box-no-book" type="Sprite2D" parent="background/box-with-no-book"]
+position = Vector2(3.59086, 45.4017)
+texture = ExtResource("18_21qy1")
+offset = Vector2(0, -43.22)
+
+[node name="box-with-book" type="Sprite2D" parent="background/box-with-no-book"]
+position = Vector2(3.59086, 45.4017)
+texture = ExtResource("19_uym0h")
+offset = Vector2(0, -43.22)
+
+[node name="box-with-col" type="CollisionPolygon2D" parent="background/box-with-no-book"]
+z_index = 1
+scale = Vector2(1.23971, 1.23971)
+polygon = PackedVector2Array(-80, 37.2727, 12.7273, 83.6362, 84.5455, 48.1819, -2.72717, 4.54541)
+
+[node name="box-area" type="Area2D" parent="background/box-with-no-book"]
+script = ExtResource("24_3o7ue")
+
+[node name="box-area-col" type="CollisionShape2D" parent="background/box-with-no-book/box-area"]
+position = Vector2(24.2365, 21.1665)
+scale = Vector2(19.1501, 10.64)
+shape = SubResource("CircleShape2D_h56a7")
+
+[node name="box-label" type="Label" parent="background/box-with-no-book/box-area"]
+z_index = 3
+offset_right = 40.0
+offset_bottom = 23.0
+scale = Vector2(1.35436, 1.35436)
+theme = ExtResource("10_1ax8c")
+text = "Осмотреть коробку"
+
+[node name="candle1" type="Sprite2D" parent="background"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-60, 133)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("20_qaahk")
+offset = Vector2(0, -8.32)
+
+[node name="bucket-paint" type="Sprite2D" parent="background"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(52.2856, 55.7136)
+scale = Vector2(0.545521, 0.545521)
+texture = ExtResource("21_y4iub")
+offset = Vector2(0, -6.985)
+
+[node name="paint1" type="Sprite2D" parent="background"]
+position = Vector2(-42.0002, 129)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("23_ukgrb")
+
+[node name="candlelight-anim" parent="background" instance=ExtResource("52_la1ap")]
+modulate = Color(2, 2, 1.3, 1)
+z_index = 1
+y_sort_enabled = true
+position = Vector2(295.139, 65.717)
+scale = Vector2(0.779594, 0.80716)
+frame = 1
+frame_progress = 0.0
+
+[node name="candlelight-anim2" parent="background" instance=ExtResource("52_la1ap")]
+modulate = Color(2, 2, 1.3, 1)
+z_index = 1
+y_sort_enabled = true
+position = Vector2(456.571, 264.286)
+scale = Vector2(0.779594, 0.80716)
+frame = 2
+frame_progress = 0.0
+
+[node name="candlelight-anim3" parent="background" instance=ExtResource("52_la1ap")]
+modulate = Color(2, 2, 1.3, 1)
+z_index = 1
+y_sort_enabled = true
+position = Vector2(109.428, 421.429)
+scale = Vector2(0.779594, 0.80716)
+frame_progress = 0.52725
+
+[node name="candlelight-anim4" parent="background" instance=ExtResource("52_la1ap")]
+self_modulate = Color(2, 2, 1.3, 1)
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-254.857, 264.286)
+scale = Vector2(0.779594, 0.80716)
+frame = 4
+frame_progress = 0.0
+
+[node name="candle9" type="Sprite2D" parent="background"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-302, 588)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("24_a8orl")
+offset = Vector2(0, -24.295)
+
+[node name="candle2" type="Sprite2D" parent="background"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(290, 136)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("22_n2ft3")
+offset = Vector2(0, -17.345)
+
+[node name="candle3" type="Sprite2D" parent="background"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(449, 339)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("23_7bme4")
+offset = Vector2(0, -19.845)
+
+[node name="candle4" type="Sprite2D" parent="background"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(110, 490)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("24_say53")
+offset = Vector2(0, -20.4)
+
+[node name="candle5" type="Sprite2D" parent="background"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-237, 346)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("28_vr377")
+offset = Vector2(0, -26.295)
+
+[node name="candle6" type="Sprite2D" parent="background"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-312, 605)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("29_bhbpx")
+offset = Vector2(0, -15.995)
+
+[node name="fairylights" type="StaticBody2D" parent="background"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(448, -50.9995)
+scale = Vector2(1.1, 1.1)
+
+[node name="fairylights-area" type="Area2D" parent="background/fairylights"]
+script = ExtResource("36_5qve6")
+
+[node name="fairylights-col-area" type="CollisionShape2D" parent="background/fairylights/fairylights-area"]
+position = Vector2(12.987, 12.597)
+scale = Vector2(-5.49416, 3.80946)
+shape = SubResource("CircleShape2D_5tbmg")
+
+[node name="fairylights-label" type="Label" parent="background/fairylights/fairylights-area"]
+z_index = 4
+offset_left = -16.8831
+offset_top = -112.078
+offset_right = 90.1169
+offset_bottom = -83.0783
+theme = ExtResource("10_1ax8c")
+text = "Гирлянда"
+
+[node name="fairylights-base" type="Sprite2D" parent="background/fairylights"]
+y_sort_enabled = true
+position = Vector2(7.79221, 13.8958)
+scale = Vector2(0.911139, 0.911139)
+texture = ExtResource("30_wstph")
+offset = Vector2(0, -24.695)
+
+[node name="fairylights-col" type="CollisionShape2D" parent="background/fairylights"]
+position = Vector2(22.354, -6.31226)
+rotation = 0.460453
+scale = Vector2(6.90892, 11.3411)
+skew = 0.584685
+shape = SubResource("RectangleShape2D_ek6wt")
+
+[node name="energydrink" type="Sprite2D" parent="background"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(375.143, 87.1428)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("32_w2wbe")
+
+[node name="energydrink2" type="Sprite2D" parent="background"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(441, 210)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("33_i5se7")
+offset = Vector2(0, -13.26)
+
+[node name="knife" type="Sprite2D" parent="background"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-171, 450)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("35_so487")
+
+[node name="pipes" type="Sprite2D" parent="background"]
+z_index = 1
+position = Vector2(-431.385, -245.491)
+scale = Vector2(1.001, 1.001)
+texture = ExtResource("36_ickol")
+
+[node name="electrical-hanging" type="Sprite2D" parent="background"]
+z_index = 1
+position = Vector2(111, -384)
+scale = Vector2(1.001, 1.001)
+texture = ExtResource("37_4vyps")
+
+[node name="saw-and-tools-wrap" type="StaticBody2D" parent="background"]
+position = Vector2(355.143, -151.429)
+scale = Vector2(0.495039, 0.495039)
+
+[node name="saw-and-tools" type="Sprite2D" parent="background/saw-and-tools-wrap"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-6.19888e-06, 80.8016)
+texture = ExtResource("38_clbqt")
+offset = Vector2(0, -76.84)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="background/saw-and-tools-wrap"]
+polygon = PackedVector2Array(-118.317, 63.4871, 31.7441, 141.403, 121.203, 101.002, -31.7434, 28.8579)
+
+[node name="tools-area" type="Area2D" parent="background/saw-and-tools-wrap"]
+script = ExtResource("44_dknlf")
+
+[node name="tools-label" type="Label" parent="background/saw-and-tools-wrap/tools-area"]
+z_index = 3
+offset_left = -124.089
+offset_top = -219.318
+offset_right = 33.9113
+offset_bottom = -190.318
+scale = Vector2(1.82218, 1.82218)
+theme = ExtResource("10_1ax8c")
+text = "Инструменты"
+
+[node name="tools-area-col" type="CollisionShape2D" parent="background/saw-and-tools-wrap/tools-area"]
+position = Vector2(-49.0585, 66.3735)
+rotation = -0.758383
+scale = Vector2(18.3697, 10.502)
+shape = SubResource("CircleShape2D_db8ts")
+
+[node name="pizzabox_wrap" type="StaticBody2D" parent="background"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(611, 222.999)
+scale = Vector2(1.1, 1.1)
+
+[node name="pizzabox" type="Sprite2D" parent="background/pizzabox_wrap"]
+position = Vector2(0, 66.1049)
+texture = ExtResource("39_f1ye5")
+offset = Vector2(0, -67.75)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="background/pizzabox_wrap"]
+z_index = 1
+polygon = PackedVector2Array(-98.1816, 62.7273, 0, 110.909, 99.0911, 60.9092, -2.72705, 14.5455)
+
+[node name="paperclutter" type="Sprite2D" parent="background"]
+position = Vector2(-680, 295)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("40_ydxi0")
+
+[node name="storage_wrap" type="StaticBody2D" parent="background"]
+position = Vector2(-393.429, 35.7144)
+scale = Vector2(1.1, 1.1)
+
+[node name="pickles" type="Sprite2D" parent="background/storage_wrap"]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(-30.9082, -269.091)
+scale = Vector2(0.423871, 0.423871)
+texture = ExtResource("41_4grrg")
+
+[node name="storage" type="Sprite2D" parent="background/storage_wrap"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(3.37609, -60.6497)
+scale = Vector2(0.481329, 0.481329)
+texture = ExtResource("42_m4ilq")
+offset = Vector2(0, -121.355)
+
+[node name="wires-inside storage" type="Sprite2D" parent="background/storage_wrap"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(91.8182, 12.7274)
+texture = ExtResource("44_t2x8n")
+
+[node name="storage-col" type="CollisionPolygon2D" parent="background/storage_wrap"]
+z_index = 1
+polygon = PackedVector2Array(-182.727, 70.9092, -88.1818, 120, 180.909, -11.8181, 76.3636, -55.4545)
+
+[node name="oc-storage-portalback" type="LightOccluder2D" parent="background/storage_wrap"]
+light_mask = 17
+visibility_layer = 17
+y_sort_enabled = true
+position = Vector2(-192.727, 127.273)
+scale = Vector2(1.00395, 1)
+occluder = SubResource("OccluderPolygon2D_352su")
+
+[node name="storage_area" type="Area2D" parent="background/storage_wrap"]
+script = ExtResource("46_crtwe")
+
+[node name="storage_area_label2" type="Label" parent="background/storage_wrap/storage_area"]
+z_index = 2
+offset_left = -148.052
+offset_top = -6.49362
+offset_right = -94.0516
+offset_bottom = 19.5064
+theme = ExtResource("10_1ax8c")
+text = "Осмотреть Шкаф"
+
+[node name="storage-area-col" type="CollisionShape2D" parent="background/storage_wrap/storage_area"]
+position = Vector2(49.351, 51.9479)
+rotation = -0.356814
+scale = Vector2(14.2223, 6.82339)
+shape = SubResource("CircleShape2D_44cxy")
+
+[node name="switch" type="Sprite2D" parent="background"]
+position = Vector2(402.999, -339)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("43_gtln7")
+
+[node name="energydrink1" type="Sprite2D" parent="background"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(672.285, 225.714)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("34_58iri")
+
+[node name="galolamp" type="Sprite2D" parent="background"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(566, -526)
+texture = ExtResource("45_8o2an")
+
+[node name="wires-nextto-storage" type="StaticBody2D" parent="background"]
+position = Vector2(-852, 301)
+scale = Vector2(1.1, 1.1)
+
+[node name="wirescol23" type="CollisionShape2D" parent="background/wires-nextto-storage"]
+z_index = 1
+position = Vector2(-1.81818, -2.72727)
+rotation = 1.39975
+shape = SubResource("CapsuleShape2D_nrv8j")
+
+[node name="wires" type="Sprite2D" parent="background/wires-nextto-storage"]
+z_index = 1
+scale = Vector2(0.815946, 0.815946)
+texture = ExtResource("46_exwc1")
+
+[node name="lights" type="CanvasGroup" parent="."]
+position = Vector2(2622.86, 1220)
+scale = Vector2(19.432, 20.1191)
+
+[node name="li-galolamp" type="PointLight2D" parent="lights"]
+position = Vector2(0, 3.8147e-06)
+rotation = 0.462512
+energy = 0.92
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_vjyl6")
+offset = Vector2(0, 28.835)
+
+[node name="li-portal" type="PointLight2D" parent="lights"]
+y_sort_enabled = true
+position = Vector2(-47.1975, 17.2544)
+rotation = -0.223146
+scale = Vector2(4.00979, 6.44877)
+color = Color(0.481457, 0, 0.124534, 1)
+energy = 2.14
+shadow_enabled = true
+shadow_color = Color(0.591004, 0.147897, 0.507388, 0)
+shadow_filter_smooth = 0.7
+shadow_item_cull_mask = 16
+texture = SubResource("GradientTexture2D_ekrln")
+texture_scale = 0.1
+
+[node name="li-portal2" type="PointLight2D" parent="lights"]
+position = Vector2(-35.2205, 35.368)
+rotation = -0.379224
+scale = Vector2(4.00979, 6.44877)
+color = Color(0.999995, 0.811682, 0.812604, 1)
+energy = 0.14
+shadow_color = Color(0.591004, 0.147897, 0.507388, 0)
+shadow_filter_smooth = 0.7
+texture = SubResource("GradientTexture2D_ekrln")
+texture_scale = 0.1
+
+[node name="CPUParticles2D2" parent="lights" instance=ExtResource("51_b4883")]
+position = Vector2(-2.64658, 38.3431)
+
+[node name="CPUParticles2D3" parent="lights" instance=ExtResource("51_b4883")]
+position = Vector2(-20.217, 46.0118)
+
+[node name="CPUParticles2D" parent="lights" instance=ExtResource("51_b4883")]
+texture_filter = 1
+
+[node name="CPUParticles2D4" parent="lights" instance=ExtResource("51_b4883")]
+texture_filter = 1
+position = Vector2(-39.1842, 38.4141)
+
+[node name="global light" type="PointLight2D" parent="lights"]
+position = Vector2(-23.893, 30.2484)
+scale = Vector2(2.23009, 1.34202)
+color = Color(0.847059, 0.513726, 1, 1)
+shadow_enabled = true
+shadow_item_cull_mask = 0
+texture = SubResource("GradientTexture2D_itjni")
+
+[node name="occluders" type="CanvasGroup" parent="."]
+visible = false
+position = Vector2(1260, 2021)
+scale = Vector2(1.1, 1.1)
+
+[node name="oc-pipes" type="LightOccluder2D" parent="occluders"]
+modulate = Color(0.345098, 0.345098, 0.345098, 0)
+occluder = SubResource("OccluderPolygon2D_l7lwk")
+
+[node name="oc-room" type="LightOccluder2D" parent="occluders"]
+modulate = Color(1, 1, 1, 0)
+z_index = 1
+y_sort_enabled = true
+occluder = SubResource("OccluderPolygon2D_y703k")
+
+[node name="oc-rails" type="LightOccluder2D" parent="occluders"]
+visible = false
+occluder = SubResource("OccluderPolygon2D_gp7yu")
+
+[node name="light-overlay" type="PointLight2D" parent="occluders"]
+z_index = 3
+position = Vector2(954.545, -482.727)
+scale = Vector2(0.725, 0.75)
+energy = 3.85
+texture = ExtResource("52_2776i")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("26_cjlej")
+volume_db = -16.033
+autoplay = true
+parameters/looping = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.141391, 0.152289, 0.228113, 1)
+
+[node name="SceneTransitionAnimation" parent="." instance=ExtResource("13_2ylkv")]
+
+[connection signal="body_entered" from="background/Book-pile/book-pile-area" to="background/Book-pile/book-pile-area" method="_on_body_entered"]
+[connection signal="body_exited" from="background/Book-pile/book-pile-area" to="background/Book-pile/book-pile-area" method="_on_body_exited"]
+[connection signal="body_entered" from="background/box-with-no-book/box-area" to="background/box-with-no-book/box-area" method="_on_body_entered"]
+[connection signal="body_exited" from="background/box-with-no-book/box-area" to="background/box-with-no-book/box-area" method="_on_body_exited"]
+[connection signal="body_entered" from="background/fairylights/fairylights-area" to="background/fairylights/fairylights-area" method="_on_body_entered"]
+[connection signal="body_exited" from="background/fairylights/fairylights-area" to="background/fairylights/fairylights-area" method="_on_body_exited"]
+[connection signal="body_entered" from="background/saw-and-tools-wrap/tools-area" to="background/saw-and-tools-wrap/tools-area" method="_on_body_entered"]
+[connection signal="body_exited" from="background/saw-and-tools-wrap/tools-area" to="background/saw-and-tools-wrap/tools-area" method="_on_body_exited"]
+[connection signal="body_entered" from="background/storage_wrap/storage_area" to="background/storage_wrap/storage_area" method="_on_body_entered"]
+[connection signal="body_exited" from="background/storage_wrap/storage_area" to="background/storage_wrap/storage_area" method="_on_body_exited"]

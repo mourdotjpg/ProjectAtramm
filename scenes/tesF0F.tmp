@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=3 uid="uid://cp2s2puy4aoxs"]
+
+[ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_pv4a2"]
+[ext_resource type="Texture2D" uid="uid://cv7euodrrqtk0" path="res://icon.svg" id="2_qkee4"]
+[ext_resource type="Texture2D" uid="uid://dlngenev47ed8" path="res://images/iso_tileset.png" id="3_f2yas"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h2jvk"]
+texture = ExtResource("3_f2yas")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, -8)
+0:0/0/y_sort_origin = 8
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0 = 0
+1:0/0/texture_origin = Vector2i(0, -8)
+1:0/0/y_sort_origin = 8
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0 = 0
+2:0/0/texture_origin = Vector2i(0, -8)
+2:0/0/y_sort_origin = 8
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+3:0/0 = 0
+3:0/0/texture_origin = Vector2i(0, -8)
+3:0/0/y_sort_origin = 8
+3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:0/0/physics_layer_0/angular_velocity = 0.0
+4:0/0 = 0
+4:0/0/texture_origin = Vector2i(0, -8)
+4:0/0/y_sort_origin = 8
+4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:0/0/physics_layer_0/angular_velocity = 0.0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.6875, 16.625, 0, 8, 15.5625, 16.875, -0.3125, 24.125)
+5:0/0 = 0
+5:0/0/texture_origin = Vector2i(0, -8)
+5:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:0/0/physics_layer_0/angular_velocity = 0.0
+6:0/0 = 0
+6:0/0/texture_origin = Vector2i(0, -8)
+6:0/0/y_sort_origin = 5
+6:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:0/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_dq8ft"]
+tile_shape = 1
+tile_layout = 4
+tile_offset_axis = 1
+tile_size = Vector2i(32, 16)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_h2jvk")
+
+[node name="test" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_pv4a2")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+scale = Vector2(0.21875, 0.21875)
+texture = ExtResource("2_qkee4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_dq8ft")
+format = 2
+layer_0/name = "ground"
+layer_0/y_sort_enabled = true
+layer_1/name = "obstacles and player"
+layer_1/y_sort_enabled = true
+layer_1/y_sort_origin = 1
+layer_1/z_index = 1
+layer_1/tile_data = PackedInt32Array(196610, 262144, 0, 131078, 262144, 0)

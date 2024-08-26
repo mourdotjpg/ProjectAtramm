@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://clg4k0i88obat"]
+
+[ext_resource type="Texture2D" uid="uid://118t7g67y8ax" path="res://images/box_basic.png" id="1_vwn45"]
+
+[node name="box" type="StaticBody2D"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(0, -50)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+z_index = 1
+y_sort_enabled = true
+scale = Vector2(0.225, 0.225)
+polygon = PackedVector2Array(-160, 97.7778, -48.8889, 151.111, 160, 44.4444, 44.4443, -8.88892)
+
+[node name="box" type="Sprite2D" parent="."]
+z_index = 1
+y_sort_enabled = true
+scale = Vector2(0.225, 0.225)
+texture = ExtResource("1_vwn45")

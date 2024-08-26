@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://gc41s2na7q28"]
+
+[ext_resource type="Texture2D" uid="uid://bac6ug0fkk6xl" path="res://images/basement/lights/_1.png" id="1_ifhs0"]
+
+[sub_resource type="Curve" id="Curve_6svmf"]
+min_value = -1.0
+_data = [Vector2(0, -0.0777203), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="CPUParticles2D" type="CPUParticles2D"]
+z_index = 1
+y_sort_enabled = true
+texture_filter = 2
+position = Vector2(-10.8804, 28.5443)
+amount = 6
+randomness = 1.0
+lifetime_randomness = 0.24
+fixed_fps = 8
+texture = ExtResource("1_ifhs0")
+gravity = Vector2(0, -20)
+scale_amount_min = 0.2
+scale_amount_max = 0.4
+color = Color(1, 0.698039, 0.564706, 0.290196)
+hue_variation_max = 0.14
+hue_variation_curve = SubResource("Curve_6svmf")

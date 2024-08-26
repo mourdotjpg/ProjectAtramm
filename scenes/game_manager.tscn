@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://5qmyl34v0m5b"]
+
+[ext_resource type="Script" path="res://game_manager_script.gd" id="1_t5l2t"]
+[ext_resource type="PackedScene" uid="uid://bbbb6nwq4jljt" path="res://scenes/basement.tscn" id="3_awyhj"]
+[ext_resource type="PackedScene" uid="uid://0tj8jlrth3xx" path="res://scenes/hallway.tscn" id="4_tsjno"]
+[ext_resource type="PackedScene" uid="uid://c8l7me2joq3tf" path="res://scenes/bass.tscn" id="5_7jfs8"]
+[ext_resource type="PackedScene" uid="uid://dt7bprw4lcq38" path="res://scenes/PauseMenu.tscn" id="6_56und"]
+
+[node name="GameManager" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_t5l2t")
+
+[node name="Basement" parent="." instance=ExtResource("3_awyhj")]
+process_mode = 1
+
+[node name="Hallway" parent="." instance=ExtResource("4_tsjno")]
+process_mode = 1
+visible = false
+
+[node name="Bass" parent="." instance=ExtResource("5_7jfs8")]
+visible = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" node_paths=PackedStringArray("game_manager") instance=ExtResource("6_56und")]
+game_manager = NodePath("../..")

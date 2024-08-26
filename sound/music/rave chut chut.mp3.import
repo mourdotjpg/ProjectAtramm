@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dpsc17ut8itj5"
+path="res://.godot/imported/rave chut chut.mp3-3b8a12c371cd55ff9d8c39891f524050.mp3str"
+
+[deps]
+
+source_file="res://sound/music/rave chut chut.mp3"
+dest_files=["res://.godot/imported/rave chut chut.mp3-3b8a12c371cd55ff9d8c39891f524050.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

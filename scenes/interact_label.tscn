@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bq3h3qv0v8o85"]
+
+[ext_resource type="FontFile" uid="uid://b5dyoopxx0yqb" path="res://resources/Roboto-Bold.ttf" id="1_d20jb"]
+
+[node name="Interact_label" type="Label"]
+z_index = 1023
+offset_right = 105.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.192157, 0, 0.117647, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_d20jb")
+theme_override_font_sizes/font_size = 24
+text = "[E] to interact"
+vertical_alignment = 1

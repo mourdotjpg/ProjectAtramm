@@ -1,0 +1,167 @@
+[gd_scene load_steps=8 format=3 uid="uid://dt7bprw4lcq38"]
+
+[ext_resource type="Script" path="res://scenes/PauseMenu.gd" id="1_245a1"]
+[ext_resource type="Texture2D" uid="uid://27purxfkx8dg" path="res://UI/gradient.png" id="2_8q5ms"]
+[ext_resource type="AudioStream" uid="uid://blepii2dmt2kb" path="res://sound/buttons/ui_button_pause.mp3" id="2_xyw8d"]
+
+[sub_resource type="Theme" id="Theme_pdox3"]
+default_font_size = 40
+
+[sub_resource type="Animation" id="Animation_ej3sl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("transition:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_iqelv"]
+resource_name = "transition_anim"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("transition:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 2),
+"update": 0,
+"values": [Color(0, 0, 0, 0.466667), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 2),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_62taw"]
+_data = {
+"RESET": SubResource("Animation_ej3sl"),
+"transition_anim": SubResource("Animation_iqelv")
+}
+
+[node name="PauseMenu" type="CanvasLayer"]
+layer = 50
+script = ExtResource("1_245a1")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -541.0
+offset_top = -479.0
+offset_right = 541.0
+offset_bottom = 479.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_8q5ms")
+
+[node name="transition" type="ColorRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.380392)
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_pdox3")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_pdox3")
+
+[node name="pause-header" type="Label" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme = SubResource("Theme_pdox3")
+theme_override_font_sizes/font_size = 15
+text = "this is not a pause menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="resumebutton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_pdox3")
+theme_override_font_sizes/font_size = 20
+text = "Resume"
+
+[node name="optionsbutton" type="Button" parent="Panel/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme = SubResource("Theme_pdox3")
+theme_override_font_sizes/font_size = 20
+text = "Options"
+
+[node name="titlemenubutton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_pdox3")
+theme_override_font_sizes/font_size = 20
+text = "Title menu"
+
+[node name="quitbutton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_pdox3")
+theme_override_font_sizes/font_size = 20
+text = "Quit"
+
+[node name="transition-fade" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_62taw")
+}
+
+[node name="PauseSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_xyw8d")
+bus = &"SFX"
+
+[connection signal="pressed" from="Panel/VBoxContainer/resumebutton" to="." method="_on_resumebutton_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/optionsbutton" to="." method="_on_optionsbutton_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/titlemenubutton" to="." method="_on_titlemenubutton_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/quitbutton" to="." method="_on_quitbutton_pressed"]

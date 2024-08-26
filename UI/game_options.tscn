@@ -1,0 +1,91 @@
+[gd_scene load_steps=2 format=3 uid="uid://h7mi2e3kx7pd"]
+
+[ext_resource type="Script" path="res://UI/game_options.gd" id="1_3eehp"]
+
+[node name="GameOptions" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3eehp")
+bus_name = null
+
+[node name="optionspanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = -100.0
+offset_right = 175.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="optionspanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = -56.0
+offset_right = 152.0
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="labeloptions" type="Label" parent="optionspanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+text = "Настройки"
+horizontal_alignment = 1
+
+[node name="grid-sfx" type="GridContainer" parent="optionspanel/VBoxContainer"]
+visible = false
+layout_mode = 2
+columns = 2
+
+[node name="Label-sfx" type="Label" parent="optionspanel/VBoxContainer/grid-sfx"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "SFX"
+
+[node name="HSlider-sfx" type="HSlider" parent="optionspanel/VBoxContainer/grid-sfx"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="grid-music" type="GridContainer" parent="optionspanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+columns = 2
+
+[node name="Label-music" type="Label" parent="optionspanel/VBoxContainer/grid-music"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_vertical = 1
+text = "МУЗЫКА"
+
+[node name="HSlider-music" type="HSlider" parent="optionspanel/VBoxContainer/grid-music"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.001
+
+[node name="backbutton" type="Button" parent="optionspanel/VBoxContainer"]
+layout_mode = 2
+text = "Назад"
+
+[connection signal="value_changed" from="optionspanel/VBoxContainer/grid-sfx/HSlider-sfx" to="." method="_on_h_slidersfx_value_changed"]
+[connection signal="value_changed" from="optionspanel/VBoxContainer/grid-music/HSlider-music" to="." method="_on_h_slidermusic_value_changed"]
+[connection signal="pressed" from="optionspanel/VBoxContainer/backbutton" to="." method="_on_backbutton_pressed"]

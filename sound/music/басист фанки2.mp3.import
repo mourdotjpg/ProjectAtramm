@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://kxe138j7pjpd"
+path="res://.godot/imported/басист фанки2.mp3-50f9ad0790d311bf89ea2762f2efb8b2.mp3str"
+
+[deps]
+
+source_file="res://sound/music/басист фанки2.mp3"
+dest_files=["res://.godot/imported/басист фанки2.mp3-50f9ad0790d311bf89ea2762f2efb8b2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

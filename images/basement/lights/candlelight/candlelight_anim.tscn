@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://gwy3rd0d4gwd"]
+
+[ext_resource type="Texture2D" uid="uid://qmn8ng3cialy" path="res://images/basement/lights/candlelight/flame-spritesheet.png" id="1_0rqm6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svxji"]
+atlas = ExtResource("1_0rqm6")
+region = Rect2(0, 0, 54, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1e3ph"]
+atlas = ExtResource("1_0rqm6")
+region = Rect2(54, 0, 54, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_112ng"]
+atlas = ExtResource("1_0rqm6")
+region = Rect2(108, 0, 54, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dbxqg"]
+atlas = ExtResource("1_0rqm6")
+region = Rect2(162, 0, 54, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ah534"]
+atlas = ExtResource("1_0rqm6")
+region = Rect2(216, 0, 54, 43)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rc304"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svxji")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1e3ph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_112ng")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dbxqg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ah534")
+}],
+"loop": true,
+"name": &"burning anim",
+"speed": 5.0
+}]
+
+[node name="candlelight-anim" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_rc304")
+animation = &"burning anim"
+autoplay = "burning anim"
+frame = 3
+frame_progress = 0.100495
